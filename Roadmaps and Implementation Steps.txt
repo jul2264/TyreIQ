@@ -1,0 +1,44 @@
+Step 1: Data Initialization
+
+Create a file named tire_wear_data.csv. Populate it with the synthetic telemetry data provided in the previous step. Ensure you have clear headers for lap, tire_type, track_temp, track_type, and lap_time.
+Step 2: Model Training (model_trainer.py)
+
+Write a script to:
+
+    Load the CSV using pd.read_csv().
+
+    Split the data into Training (80%) and Testing (20%) sets.
+
+    Initialize RandomForestRegressor(n_estimators=100).
+
+    fit the model on the training data.
+
+    Save the trained model using joblib for use in the UI.
+
+Step 3: Strategy Engine Development
+
+Implement a function calculate_pit_window() that:
+
+    Takes the user's current tire and lap.
+
+    Runs a loop to predict the next 15 laps.
+
+    Checks for the performance drop threshold.
+
+Step 4: Streamlit Dashboard (app.py)
+
+Build the interactive interface:
+
+    Sliders/Selectboxes: For user inputs (Tire Compound, Temp).
+
+    Dynamic Graphing: Use st.line_chart to show how lap times will increase over the next 20 laps.
+
+    Recommendation Box: A big, bold text area that says: "RECOMMENDED PIT STOP: LAP X".
+
+Step 5: Testing & Validation
+
+Run the system against different scenarios:
+
+    Scenario A: High track temp + Soft tires (Should result in an early pit stop).
+
+    Scenario B: Low track temp + Hard tires (Should result in a very long stint).

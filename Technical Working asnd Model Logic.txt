@@ -1,0 +1,17 @@
+2.1 The Core Algorithm: Random Forest Regressor
+
+Tire wear is a complex, non-linear process. Unlike simple systems, a tire doesn't lose performance at a constant rate; it often stays stable for several laps before hitting a "cliff" where performance drops sharply.
+
+Random Forest is an ensemble learning method that builds multiple decision trees and merges them together to get a more accurate and stable prediction. It excels here because it can capture these sudden "inflection points" in the data better than a standard linear model.
+2.2 Input Features (X)
+Feature	Data Type	Description
+Lap Number	Integer	The current age of the tire.
+Tire Type	Categorical	0: Soft, 1: Medium, 2: Hard.
+Track Temp	Float	Ambient track temperature in °C (affects wear rate).
+Track Type	Categorical	0: Permanent Circuit, 1: Street Circuit (higher wear).
+2.3 Mathematical Evaluation
+
+The model's performance is measured using Root Mean Square Error (RMSE). This metric calculates the average difference between the predicted lap time and the actual lap time recorded in the dataset.
+RMSE=n1​i=1∑n​(yi​−y^​i​)2​
+
+A lower RMSE indicates that the model's predictions are very close to the actual telemetry.

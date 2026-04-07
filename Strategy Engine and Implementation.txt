@@ -1,0 +1,25 @@
+3.1 The "Pit Window" Logic
+
+The Strategy Engine is the custom logic that sits on top of the ML model. It doesn't just predict a number; it makes a decision.
+
+How it works:
+
+    The engine asks the ML model to predict lap times for the next 20 laps.
+
+    It calculates the delta (Δ) between each consecutive lap.
+
+    If the predicted lap time increases by more than a specific Threshold (e.g., 0.8 seconds per lap) compared to a "fresh tire" baseline, the engine triggers a PIT STOP recommendation.
+
+3.2 Software Implementation Stack
+
+    Language: Python
+
+    Data Analysis: pandas, numpy
+
+    Machine Learning: scikit-learn
+
+    Visualization: matplotlib
+
+    Deployment: Streamlit
+
+    Note for Viva: You can explain that while deep learning (LSTMs) can be used for time-series data, Random Forest is preferred for this project because it is "interpretable"—meaning we can see exactly which feature (like Track Temp) influenced the pit-stop recommendation the most.

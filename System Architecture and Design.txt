@@ -1,0 +1,24 @@
+1.1 Project Overview
+
+The Tire Wear Prediction System is a machine learning-based tool designed to help race engineers predict lap time degradation and optimize pit-stop strategy. By analyzing variables like tire compound, track temperature, and lap history, the system identifies the "performance cliff"—the point where a tire's grip drops significantly.
+1.2 System Components
+
+The architecture is divided into four distinct layers:
+
+    Data Layer: Handles the ingestion of telemetry data. For this project, it uses a CSV-based dataset containing lap numbers, tire types (Soft, Medium, Hard), track temperatures, and the target variable: lap_time.
+
+    Preprocessing Layer: * Label Encoding: Converts categorical data (e.g., "Soft" → 0) into numerical format.
+
+        Feature Scaling: Normalizes inputs to ensure the model treats all variables with appropriate weight.
+
+    Intelligence Layer (ML Models):
+
+        Primary Model: Random Forest Regressor (chosen for its ability to handle non-linear tire degradation).
+
+        Baseline Model: Linear Regression (used as a benchmark for comparison during evaluation).
+
+    Application Layer: A Streamlit-based UI that allows users to input race conditions and view real-time predictions and strategy recommendations.
+
+1.3 Architecture Diagram (Text Representation)
+
+[User Inputs] → [Preprocessing] → [Random Forest Model] → [Strategy Engine] → [Dashboard Output]
