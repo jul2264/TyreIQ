@@ -2,7 +2,7 @@
 
 TyreIQ is a professional-grade Formula 1 Strategy Engine and Race Simulator. It combines predictive machine learning techniques (`RandomForestRegressor`) with multi-variable deterministic physics (fuel weight reduction, dynamic track evolution) to produce high-fidelity tire degradation curves and optimal pit-stop mathematical comparisons.
 
-## 🧠 System Architecture & Workflow
+## System Architecture & Workflow
 
 The architecture is split into four primary micro-services that handle telemetry pipeline simulation, AI training, computational strategy execution, and interactive visualization. 
 
